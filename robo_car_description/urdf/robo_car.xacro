@@ -1,0 +1,356 @@
+<?xml version="1.0" ?>
+<robot name="robo_car" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robo_car_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find robo_car_description)/urdf/robo_car.trans" />
+<xacro:include filename="$(find robo_car_description)/urdf/robo_car.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.8278008028562968e-06 2.556700843826723e-06 0.0024999996435062038" rpy="0 0 0"/>
+    <mass value="3.5487922380141925"/>
+    <inertia ixx="0.049306" iyy="0.01807" izz="0.067361" ixy="1e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_spacer_1">
+  <inertial>
+    <origin xyz="-7.855450288307697e-07 8.690328873184328e-09 0.057499998862960436" rpy="0 0 0"/>
+    <mass value="0.06549390891091923"/>
+    <inertia ixx="7.3e-05" iyy="7.3e-05" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.14 0.18 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_front_spacer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.14 0.18 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_front_spacer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_wheel_1">
+  <inertial>
+    <origin xyz="-0.02500000000000001 -2.4841240175987878e-14 0.0" rpy="0 0 0"/>
+    <mass value="5.189336533290716"/>
+    <inertia ixx="0.011528" iyy="0.006764" izz="0.006764" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15 0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15 0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_wheel_1">
+  <inertial>
+    <origin xyz="-0.024999999999999967 2.4841240175987878e-14 -6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="5.1893365332907155"/>
+    <inertia ixx="0.011528" iyy="0.006764" izz="0.006764" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15 -0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15 -0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_wheel_1">
+  <inertial>
+    <origin xyz="0.024999999999999967 2.4841240175987878e-14 1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="5.1893365332907155"/>
+    <inertia ixx="0.011528" iyy="0.006764" izz="0.006764" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15 -0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15 -0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_wheel_1">
+  <inertial>
+    <origin xyz="0.024999999999999967 -2.4841240175987878e-14 -6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="5.1893365332907155"/>
+    <inertia ixx="0.011528" iyy="0.006764" izz="0.006764" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15 0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15 0.1 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_motor_1">
+  <inertial>
+    <origin xyz="-0.03832309886359105 2.7755575615628914e-17 0.04" rpy="0 0 0"/>
+    <mass value="6.176769013984079"/>
+    <inertia ixx="0.010457" iyy="0.007186" izz="0.011206" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.09 0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.09 0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_motor_1">
+  <inertial>
+    <origin xyz="0.03832309886359103 2.7755575615628914e-17 0.04" rpy="0 0 0"/>
+    <mass value="6.176769013984079"/>
+    <inertia ixx="0.010457" iyy="0.007186" izz="0.011206" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.09 0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.09 0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_motor_1">
+  <inertial>
+    <origin xyz="-0.038323098863591074 -4.163336342344337e-17 0.04" rpy="0 0 0"/>
+    <mass value="6.176769013984079"/>
+    <inertia ixx="0.010457" iyy="0.007186" izz="0.011206" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.09 -0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.09 -0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/left_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_motor_1">
+  <inertial>
+    <origin xyz="0.03832309886359103 -4.163336342344337e-17 0.04" rpy="0 0 0"/>
+    <mass value="6.176769013984079"/>
+    <inertia ixx="0.010457" iyy="0.007186" izz="0.011206" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.09 -0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.09 -0.1 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/right_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_1">
+  <inertial>
+    <origin xyz="0.0 0.0 0.04" rpy="0 0 0"/>
+    <mass value="5.275199999999998"/>
+    <inertia ixx="0.004967" iyy="0.009144" izz="0.008484" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_sensor_base_1">
+  <inertial>
+    <origin xyz="-0.024999999999917342 0.0019730331919356747 0.015" rpy="0 0 0"/>
+    <mass value="0.06581104753050401"/>
+    <inertia ixx="5e-06" iyy="1.7e-05" izz="1.3e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.2 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/front_right_sensor_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.2 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/front_right_sensor_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_right_sensor_base_1">
+  <inertial>
+    <origin xyz="-0.025000000000082657 -0.0019730331919356747 0.015" rpy="0 0 0"/>
+    <mass value="0.0658110475305034"/>
+    <inertia ixx="5e-06" iyy="1.7e-05" izz="1.3e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.2 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/back_right_sensor_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.2 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robo_car_description/meshes/back_right_sensor_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="left_front_spacer_bottom_joint" type="fixed">
+  <origin xyz="0.14 -0.18 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_spacer_1"/>
+</joint>
+
+<joint name="lef_front_wheel_joint" type="continuous">
+  <origin xyz="0.06 0.0 0.04" rpy="0 0 0"/>
+  <parent link="left_front_motor_1"/>
+  <child link="left_front_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="left_back_wheel_joint" type="continuous">
+  <origin xyz="0.06 0.0 0.04" rpy="0 0 0"/>
+  <parent link="left_back_motor_1"/>
+  <child link="left_back_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="right_back_wheel_joint" type="continuous">
+  <origin xyz="-0.06 0.0 0.04" rpy="0 0 0"/>
+  <parent link="right_back_motor_1"/>
+  <child link="right_back_wheel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="right_front_wheel_joint" type="continuous">
+  <origin xyz="-0.06 0.0 0.04" rpy="0 0 0"/>
+  <parent link="right_front_motor_1"/>
+  <child link="right_front_wheel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="left_front_motor_joint" type="fixed">
+  <origin xyz="0.09 -0.1 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_motor_1"/>
+</joint>
+
+<joint name="right_front_motor_joint" type="fixed">
+  <origin xyz="-0.09 -0.1 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_front_motor_1"/>
+</joint>
+
+<joint name="left_back_motor_joint" type="fixed">
+  <origin xyz="0.09 0.1 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_back_motor_1"/>
+</joint>
+
+<joint name="right_back_motor_joint" type="fixed">
+  <origin xyz="-0.09 0.1 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_back_motor_1"/>
+</joint>
+
+<joint name="battery_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="battery_1"/>
+</joint>
+
+<joint name="front_right_sensor_base_joint" type="fixed">
+  <origin xyz="0.0 -0.2 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_sensor_base_1"/>
+</joint>
+
+<joint name="back_right_sensor_base_joint" type="fixed">
+  <origin xyz="0.0 0.2 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_right_sensor_base_1"/>
+</joint>
+
+</robot>
